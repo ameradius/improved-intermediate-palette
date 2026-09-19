@@ -26,8 +26,7 @@ A Krita plugin fork of [Tayete's Intermediate Palette Plugin](https://krita-arti
     - moved plugin controls info to a hoverable (?) icon,
     - matching the palette's canvas background to the theme,
 
-![Theme 1](https://file.garden/apes3Jfn0maeAVMw/ImprovedIntermediatePlugin/GrayIIP.png) ![Theme 2](https://file.garden/apes3Jfn0maeAVMw/ImprovedIntermediatePlugin/WhiteIIP.png)
-
+      ![Theme 1](https://file.garden/apes3Jfn0maeAVMw/ImprovedIntermediatePlugin/GrayIIP.png) ![Theme 2](https://file.garden/apes3Jfn0maeAVMw/ImprovedIntermediatePlugin/WhiteIIP.png)
     - lastly picked color grid highlight,
     - etc.
 
