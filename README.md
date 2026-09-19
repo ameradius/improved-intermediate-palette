@@ -16,7 +16,7 @@ A Krita plugin fork of [Tayete's Intermediate Palette Plugin](https://krita-arti
 
 ![Color History](https://file.garden/apes3Jfn0maeAVMw/ImprovedIntermediatePlugin/ColorHistory.png)
 
-- **Improvement and additions to anchors.** They are now way more readable (a little right triangle on top left with contrasting color) and you can check them in the Anchors dropdown. Right-clicking is feels finicky on a drawing tablet, so I added a Ctrl + Click/Long press shortcuts for the grids.
+- **Improvement and additions to anchors.** They are now way more readable (a little right triangle on top left with contrasting color) and you can check them in the Anchors dropdown. Right-clicking feels finicky on a drawing tablet, hence the addition of shortcuts Ctrl + Click for anchor deletion and Ctrl + Long press for menu.
 
 ![Anchors List](https://file.garden/apes3Jfn0maeAVMw/ImprovedIntermediatePlugin/AnchorsList.png)
 
