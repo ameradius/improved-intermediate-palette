@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=improved_intermediate_palette
+X-Krita-Manual=manual.html
+Name=Improved Intermediate Palette
+Comment=Improved intermediate palette plugin with extra QOL features.
