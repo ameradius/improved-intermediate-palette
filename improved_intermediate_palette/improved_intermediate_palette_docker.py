@@ -23,7 +23,7 @@ DOCKER_TITLE = "Improved Intermediate Palette"
 
 GRID_SIZES = [
     ("5 × 5",    5,    5),
-    ("8 x 8",    8,    8)
+    ("8 x 8",    8,    8),
     ("10 × 10", 10,   10),
     ("12 × 12", 12,   12).
     ("15 × 15", 15,   15),
