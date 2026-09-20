@@ -18,13 +18,15 @@ The goal is to calculate the color $`\mathbf{C}(r, c)`$ of every unpinned cell $
 
 # Some terminologies
 
-$`\mathbf{LI}`$, an abbreviation of [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation), is a function that takes two values $`A`$ and $`B`$ and a weight parameter $`t`$ which defined as
+$`\mathbf{LI}`$, an abbreviation of [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation), is a function that takes two values $`A`$ and $`B`$ and a weight parameter $`t`$ and converts it into their linear interpolation which defined as
 
 $$
 \mathbf{LI}(A,B,t) = (1-t)A + tB.
 $$
 
-Let $`\mathbf{a}_r = [r^{(0)}, r^{(1)}, \ldots, r^{(N-1)}]`$ and $`\mathbf{a}_c = [c^{(0)}, c^{(1)}, \ldots, c^{(M-1)}]`$ be respectively two sorted index sets of the sets $`\lbrace r_1, r_2, \ldots, r_K \rbrace \cup \lbrace 0, R-1 \rbrace`$ and $`\lbrace c_1, c_2, \ldots, c_K \rbrace \cup \lbrace 0, C-1 \rbrace`$. Let $`\mathbf{a}_r \times \mathbf{a}_c`$ be the set of **junctions**. Our grid $`\mathcal{G}`$ can be partitioned by junctions into an $`(N-1) \times (M-1)`$ grid of **patches** $`\mathcal{P}`$ such that $`\mathcal{P}_{i,j} = [r^{(i)}, r^{(i+1)}] \times [c^{(j)}, c^{(j+1)}]`$. The term **bilinear patch blend values** refer to values $`t_{r,c} \in [0, 1]`$ that were determined *locally* on $`\mathcal{P}_{i,j}`$ (only dependent on the patch) where $`(r,c) \in \mathcal{P}_{i,j}`$ for each grid $`(r,c)`$ in $`\mathcal{G}`$ or through some *subpatch* of $`\mathcal{P}`$.
+Let $`\mathbf{a}_r = [r^{(0)}, r^{(1)}, \ldots, r^{(N-1)}]`$ and $`\mathbf{a}_c = [c^{(0)}, c^{(1)}, \ldots, c^{(M-1)}]`$ be respectively two sorted index sets of the sets $`\lbrace r_1, r_2, \ldots, r_K \rbrace \cup \lbrace 0, R-1 \rbrace`$ and $`\lbrace c_1, c_2, \ldots, c_K \rbrace \cup \lbrace 0, C-1 \rbrace`$. Let $`\mathbf{a}_r \times \mathbf{a}_c`$ be the set of **junctions**. Our grid $`\mathcal{G}`$ can be partitioned by junctions into an $`(N-1) \times (M-1)`$ grid of **patches** $`\mathcal{P}`$ such that $`\mathcal{P}_{i,j} = [r^{(i)}, r^{(i+1)}] \times [c^{(j)}, c^{(j+1)}]`$. In layman terms, junctions are grids where anchors + corners meet horizontally and vertically, while patches are blocks of grids formed by those junctions.  
+
+The term **bilinear patch blend values** refer to values $`t_{r,c} \in [0, 1]`$ that were determined *locally* on $`\mathcal{P}_{i,j}`$ (only dependent on the patch) where $`(r,c) \in \mathcal{P}_{i,j}`$ for each grid $`(r,c)`$ in $`\mathcal{G}`$ or through some *subpatch* of $`\mathcal{P}`$.
 
 The term **normalized spatial weight vectors** refer to vectors $`\mathbf{w}_{r,c}`$ such that 
 
@@ -37,7 +39,7 @@ where $`\Delta^{K-1}`$ is the unit $`(K-1)`$-simplex[^1].
 Given color transformation $`\Phi`$ and a fixed number of weights $`L`$, **color mixing** is the transformation
 
 $$
-\mathbf{C}_{\text{mix}}(r, c) = \Phi^{-1} \left( \sum_{l=1}^L s_l(r, c) \, \Phi(\mathbf{C}_l) \right)
+\mathbf{C}_{\text{mix}}(r, c) = \Phi^{-1} \left( \sum_{l=1}^L s_l(r, c) \Phi(\mathbf{C}_l) \right)
 $$
 
 where $`s_l \in [0,1], 1 \leq l \leq L`$. The weights are, for example,
