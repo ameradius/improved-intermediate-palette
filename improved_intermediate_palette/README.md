@@ -3,7 +3,7 @@
 The intermediate palette generates a 2D discrete color field $`\mathbf{C}: \mathcal{G} \rightarrow [0, 255]^3`$ over a rectangular grid of cells:
 
 $$
-\mathcal{G} = \left\lbrace (r, c) \in \mathbb{Z}^2 \;\middle\vert\; 0 \le r < R, \; 0 \le c < C \right\rbrace
+\mathcal{G} = \left\lbrace (r, c) \in \mathbb{Z}^2 \middle\vert 0 \le r < R,  0 \le c < C \right\rbrace
 $$
 
 where $`R`$ is the total number of rows and $`C`$ is the total number of columns. Dealing with $`R=C`$ just for ease of development.
@@ -11,7 +11,7 @@ where $`R`$ is the total number of rows and $`C`$ is the total number of columns
 A user pins an arbitrary subset of $`K`$ cells of **anchors** onto $`\mathcal{G}`$:
 
 $$
-\mathcal{A} = \left\lbrace \left( \mathbf{p}_k, \mathbf{C}_k \right) \right\rbrace_{k=1}^K, \quad \mathbf{p}_k = (r_k, c_k) \in \mathcal{G}, \quad \mathbf{C}_k \in [0, 255]^3
+\mathcal{A} = \left\lbrace \left( \mathbf{p}_k, \mathbf{C}\_k \right) \right\rbrace\_{k=1}^K, \quad \mathbf{p}_k = (r_k, c_k) \in \mathcal{G}, \quad \mathbf{C}_k \in [0, 255]^3
 $$
 
 The goal is to calculate the color $`\mathbf{C}(r, c)`$ of every unpinned cell $`(r, c) \in \mathcal{G} \setminus \lbrace \mathbf{p}_k \rbrace`$.
@@ -42,7 +42,7 @@ $$
 \mathbf{C}_{\text{mix}}(r, c) = \Phi^{-1} \left( \sum_{l=1}^L s_l(r, c) \Phi(\mathbf{C}_l) \right)
 $$
 
-where $`s_l \in [0,1], 1 \leq l \leq L`$. The weights are, for example,
+where $`s_l \in [0,1], 1 \leq l \leq L`$ and $`\Sigma s_l = 1`$. The weights are, for example,
 - Bilinear patch blend values: $`L=2`$ where $`s_1 = 1-t`$ and $`s_2 = t`$.
 - Normalized spatial weight vectors: $`L = K`$ where $`s_l(r,c) = w_{r,c}^{(l)}`$ for $`1 \leq l \leq K`$.
 
